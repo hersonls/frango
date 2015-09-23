@@ -3,7 +3,7 @@ Frango - A FRontend and backend djANGO project template
 
 Agora o Frontend e o Backend viverão em diretórios separados. Frango utiliza por
 padrão Grunt para gerenciar suas tasks Frontend. Você poderá adaptar a mesma
-ideia para otros projetos como Gulp por exemplo.
+ideia para outros projetos como por exemplo Gulp.
 
 Entendendo a raiz do projeto:
 
@@ -39,6 +39,17 @@ $ pip install django
 $ django-admin startproject --template=https://github.com/hersonls/frango/archive/master.zip myproject
 $ cd myproject
 $ make config
+```
+
+Servidor de desenvolvimento
+---------------------------
+
+Frango acompanha um app com comandos para gerenciar os processos de servidor de
+frontend e backend. Após a configuração, para utilizar o servidor de
+desenvolvimento basta utilizar o comando:
+
+```
+$ python manage.py server
 ```
 
 
