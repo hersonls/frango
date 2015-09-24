@@ -24,21 +24,36 @@ projeto Django/Frontend.
 - NodeJS
 - NPM
 - Bower
+- Grunt
 - Libsass
 
-Por enquanto :D
+### Instalação no Ubuntu:
 
-Instalação
-----------
+É preciso definir no PATH do sistema o diretório binário local do nodejs.
+Adicione no no arquivo ~/.bashrc a seguinte linha:
+
+```
+export PATH="$PATH:./node_modules/.bin" >> ~/.bashrc
+```
+
+Para instalar as dependencias:
+
+```
+sudo apt-get install nodejs nodejs-legacy npm
+sudo npm install -g grunt-cli grunt bower
+```
+
+Configurando novo projeto Frango
+--------------------------------
 
 Para configurar um novo projeto com template Frango:
 
 ```
-$ mkvirtualenv myproject
-$ pip install django
-$ django-admin startproject --template=https://github.com/hersonls/frango/archive/master.zip myproject
-$ cd myproject
-$ make config
+mkvirtualenv myproject
+pip install django
+django-admin startproject --template=https://github.com/hersonls/frango/archive/master.zip myproject
+cd myproject
+make config
 ```
 
 Servidor de desenvolvimento
@@ -51,7 +66,6 @@ desenvolvimento basta utilizar o comando:
 ```
 $ python manage.py server
 ```
-
 
 Frontend
 --------
