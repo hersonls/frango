@@ -81,6 +81,7 @@ By default, frontend is automated by [Gulp](http://gulpjs.com/). This is which t
 - [wiredep](https://www.npmjs.com/package/gulp-wiredep) - Dude, you don't need to put your dependences by yourself, this will put for in your html or sass files after execute bower install. 
 - [uglify](https://www.npmjs.com/package/gulp-uglify) - This task is what you need to minify your javascript. 
 - [useref](https://www.npmjs.com/package/gulp-useref) - This task will help you concatenate your files easily. 
+- [mocha](https://mochajs.org/) - By default we have mocha for your tests.
 
 All this stuff is run automatically by default in your development server.
 
