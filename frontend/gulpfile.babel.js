@@ -141,6 +141,27 @@ gulp.task('serve:django', ['styles', 'scripts', 'fonts'], () => {
   gulp.watch('bower.json', ['wiredep', 'fonts']);
 });
 
+gulp.task('serve:test', ['scripts'], () => {
+  browserSync({
+    notify: false,
+    port: 9000,
+    ui: false,
+    server: {
+      baseDir: 'test',
+      routes: {
+        '/scripts': '.tmp/scripts',
+        '/bower_components': 'static/bower_components',
+        '/static': 'static'
+      }
+    }
+  });
+
+  gulp.watch('static/scripts/**/*.js', ['scripts']);
+  gulp.watch('test/spec/**/*.js').on('change', reload);
+  gulp.watch('test/spec/**/*.js', ['lint:test']);
+});
+
+
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('build', ['lint', 'images', 'fonts', 'html']);
