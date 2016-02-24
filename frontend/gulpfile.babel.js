@@ -72,7 +72,7 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe($.useref({searchPath: ['.tmp', 'static', 'templates', '.']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano()))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist/templates'));
 });
 
 function lint(files, options) {

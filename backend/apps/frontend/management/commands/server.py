@@ -19,7 +19,7 @@ class Command(StaticfilesRunserverCommand):
         self.stdout.write('>>> Starting grunt')
         print "*" * 80
         self.grunt_process = subprocess.Popen(
-            ['grunt server --gruntfile={0}/Gruntfile.js --base={0}'
+            ['gulp serve:django --cwd {0}'
              .format(settings.FRONTEND_DIR)],
             shell=True,
             stdin=subprocess.PIPE,
