@@ -83,7 +83,16 @@ By default, frontend is automated by [Gulp](http://gulpjs.com/). This is which t
 - [useref](https://www.npmjs.com/package/gulp-useref) - This task will help you concatenate your files easily. 
 - [mocha](https://mochajs.org/) - By default we have mocha for your tests.
 
-All this stuff is run automatically by default in your development server.
+All this stuff run automatically by default in your development server.
+
+### Gulp tasks
+
+The main gulp tasks are:
+
+- ```gulp serve:django``` - Run BrowserSync in port 9000 as a proxy to port 8000.
+- ```gulp serve:test``` - Run javascript tests using mocha by default.
+- ```gulp serve``` - Run web server using BrowserSync to serve template folder and statics ( usefull for create html without run a django server ).
+- ```gulp build``` - Create a distribution directory with all final files for production. 
 
 ### Create a distribution build
 
