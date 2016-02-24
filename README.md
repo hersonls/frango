@@ -76,7 +76,7 @@ By default, frontend is automated by [Gulp](http://gulpjs.com/). This is which t
 
 - [BrowserSync]() - Here's pleasure, now all your test browser will be automatically updated when any changes happen.
 - [sass](https://www.npmjs.com/package/gulp-sass) - Compile automaticaly all sass files.
-- [babel](https://www.npmjs.com/package/gulp-babel) - Now, Babel to give you support to ES6 code.
+- [babel](https://www.npmjs.com/package/gulp-babel) - Now you can write ES6 without worry about browser support.
 - [autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer) - You don't need to remember all browser support tags, this task will add for you.
 - [cssnano](https://www.npmjs.com/package/cssnano) - This task will make your css small as possible.
 - [eslit](https://www.npmjs.com/package/gulp-eslint) - If you make something wrong in your Javascript, this task will make you know about it.
