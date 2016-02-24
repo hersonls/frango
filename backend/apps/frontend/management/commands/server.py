@@ -16,8 +16,9 @@ class Command(StaticfilesRunserverCommand):
 
     def start_grunt(self):
         print "*" * 80
-        self.stdout.write('>>> Starting grunt')
+        self.stdout.write('>>> Starting gulp server:django task...')
         print "*" * 80
+
         self.grunt_process = subprocess.Popen(
             ['gulp serve:django --cwd {0}'
              .format(settings.FRONTEND_DIR)],
@@ -27,11 +28,11 @@ class Command(StaticfilesRunserverCommand):
             stderr=self.stderr,
         )
 
-        self.stdout.write('>>> Grunt process on pid {0}'
+        self.stdout.write('>>> Gulp process on pid {0}'
                           .format(self.grunt_process.pid))
 
         def kill_grunt_process(pid):
-            self.stdout.write('>>> Closing grunt process')
+            self.stdout.write('>>> Closing gulp process')
             os.kill(pid, signal.SIGTERM)
 
         atexit.register(kill_grunt_process, self.grunt_process.pid)
