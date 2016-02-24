@@ -89,6 +89,8 @@ By default, frontend is automated by [Gulp](http://gulpjs.com/). This is which t
 TO-DO
 -----
 
+- Test, test and more test
+- Feend back from Front-end nation
 - Improve npm speed and a better strategy for first install of dependency in deployment proccess.
 - Improve django management command for manage gulp process. Gulp process is restart always django
   server is restarted.
