@@ -82,6 +82,7 @@ By default, frontend is automated by [Gulp](http://gulpjs.com/). This is which t
 - [uglify](https://www.npmjs.com/package/gulp-uglify) - This task is what you need to minify your javascript. 
 - [useref](https://www.npmjs.com/package/gulp-useref) - This task will help you concatenate your files easily. 
 - [mocha](https://mochajs.org/) - By default we have mocha for your tests.
+- [notify](https://www.npmjs.com/package/gulp-notify) - Gulp will notify you when your styles or scripts have errors. 
 
 All this stuff run automatically by default in your development server.
 
