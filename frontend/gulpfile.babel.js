@@ -19,6 +19,7 @@ gulp.task('styles', () => {
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'));
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('scripts', () => {
@@ -28,6 +29,7 @@ gulp.task('scripts', () => {
     .pipe($.babel())
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/scripts'));
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('wiredep', () => {
@@ -107,9 +109,9 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
   });
 
   gulp.watch([
-    'app/*.html',
+    'templates/*.html',
     '.tmp/scripts/**/*.js',
-    'app/images/**/*',
+    'templates/images/**/*',
     '.tmp/fonts/**/*'
   ]).on('change', reload);
 
