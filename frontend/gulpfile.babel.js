@@ -103,7 +103,7 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
       baseDir: ['.tmp', 'templates'],
       routes: {
         '/bower_components': 'static/bower_components',
-        '/static': 'static'
+        '/static': '.tmp'
       }
     }
   });
