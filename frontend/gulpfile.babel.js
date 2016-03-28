@@ -18,7 +18,7 @@ gulp.task('styles', () => {
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('.tmp/styles'))
+    .pipe(gulp.dest('.tmp/static/styles'))
     .pipe(reload({stream: true}));
 });
 
@@ -28,7 +28,7 @@ gulp.task('scripts', () => {
     .pipe($.sourcemaps.init()) 
     .pipe($.babel())
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('.tmp/scripts'))
+    .pipe(gulp.dest('.tmp/static/scripts'))
     .pipe(reload({stream: true}));
 });
 
@@ -49,7 +49,7 @@ gulp.task('wiredep', () => {
 gulp.task('fonts', () => {
   return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
     .concat('static/fonts/**/*'))
-    .pipe(gulp.dest('.tmp/fonts'))
+    .pipe(gulp.dest('.tmp/static/fonts'))
     .pipe(gulp.dest('dist/fonts'));
 });
 
@@ -71,10 +71,12 @@ gulp.task('images', () => {
 
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('templates/*.html')
-    .pipe($.useref({searchPath: ['.tmp', 'static', 'templates', '.']}))
+    .pipe($.useref({searchPath: ['.tmp', '.tmp/static', 'static', 'templates', '.']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano()))
-    .pipe(gulp.dest('dist/templates'));
+    .pipe($.if('*.js', gulp.dest('dist')))
+    .pipe($.if('*.css', gulp.dest('dist')))
+    .pipe($.if('*.html', gulp.dest('dist')));
 });
 
 function lint(files, options) {
@@ -100,19 +102,19 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
     notify: false,
     port: 9000,
     server: {
-      baseDir: ['.tmp', 'templates'],
+      baseDir: ['.tmp', '.tmp/static', 'templates'],
       routes: {
         '/bower_components': 'static/bower_components',
-        '/static': '.tmp'
+        '/static': '.tmp/static'
       }
     }
   });
 
   gulp.watch([
     'templates/*.html',
-    '.tmp/scripts/**/*.js',
+    '.tmp/static/scripts/**/*.js',
     'templates/images/**/*',
-    '.tmp/fonts/**/*'
+    '.tmp/static/fonts/**/*'
   ]).on('change', reload);
 
   gulp.watch('static/styles/**/*.scss', ['styles']);
@@ -132,9 +134,9 @@ gulp.task('serve:django', ['styles', 'scripts', 'fonts'], () => {
 
   gulp.watch([
     'templates/**/*.html',
-    '.tmp/scripts/**/*.js',
+    '.tmp/static/scripts/**/*.js',
     'static/images/**/*',
-    '.tmp/fonts/**/*'
+    '.tmp/static/fonts/**/*'
   ]).on('change', reload);
 
   gulp.watch('static/styles/**/*.scss', ['styles']);
@@ -151,7 +153,7 @@ gulp.task('serve:test', ['scripts'], () => {
     server: {
       baseDir: 'test',
       routes: {
-        '/scripts': '.tmp/scripts',
+        '/scripts': '.tmp/static/scripts',
         '/bower_components': 'static/bower_components',
         '/static': 'static'
       }
