@@ -50,7 +50,7 @@ gulp.task('fonts', () => {
   return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
     .concat('static/fonts/**/*'))
     .pipe(gulp.dest('.tmp/static/fonts'))
-    .pipe(gulp.dest('dist/fonts'));
+    .pipe(gulp.dest('dist/static/fonts'));
 });
 
 gulp.task('images', () => {
@@ -66,7 +66,7 @@ gulp.task('images', () => {
       console.log(err);
       this.end();
     })))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest('dist/static/images'));
 });
 
 gulp.task('html', ['styles', 'scripts'], () => {
@@ -76,7 +76,7 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe($.if('*.css', $.cssnano()))
     .pipe($.if('*.js', gulp.dest('dist')))
     .pipe($.if('*.css', gulp.dest('dist')))
-    .pipe($.if('*.html', gulp.dest('dist')));
+    .pipe($.if('*.html', gulp.dest('dist/templates')));
 });
 
 function lint(files, options) {
