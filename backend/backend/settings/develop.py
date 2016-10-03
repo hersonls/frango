@@ -1,13 +1,10 @@
 from backend.backend.settings.base import *
 
-FRONTEND_DEV = True
-FRONTEND_ENV = ('' if FRONTEND_DEV else 'dist')
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(FRONTEND_DIR, FRONTEND_ENV, 'templates')
+            os.path.join(FRONTEND_DIR, 'templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -22,8 +19,6 @@ TEMPLATES = [
 ]
 
 STATICFILES_DIRS = [
-    os.path.join(FRONTEND_DIR, FRONTEND_ENV, 'static'),
+    os.path.join(FRONTEND_DIR, '.tmp'),
+    os.path.join(FRONTEND_DIR, 'static'),
 ]
-
-if FRONTEND_DEV:
-    STATICFILES_DIRS.insert(0, os.path.join(FRONTEND_DIR, '.tmp'))
