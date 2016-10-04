@@ -63,24 +63,6 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'backend.urls'
 
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(FRONTEND_DIR, FRONTEND_ENV, 'templates')
-        ],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
-
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
@@ -113,10 +95,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(FRONTEND_DIR, FRONTEND_ENV, 'static'),
-]
 
 if FRONTEND_DEV:
     STATICFILES_DIRS.insert(0, os.path.join(FRONTEND_DIR, '.tmp'))
