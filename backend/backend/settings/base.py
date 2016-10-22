@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ROOT_DIR = os.path.realpath(os.path.join(BASE_DIR, '..'))
+ROOT_DIR = os.path.realpath(os.path.join(BASE_DIR, '..', '..'))
 
 # Frontend and backend paths
 BACKEND_DIR = BASE_DIR
