@@ -20,6 +20,9 @@ develop-eggs
 lib
 lib64
 
+# PyCharm
+.idea/*
+
 # Installer logs
 pip-log.txt
 
