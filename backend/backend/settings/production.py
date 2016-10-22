@@ -1,4 +1,4 @@
-from backend.backend.settings.base import *
+from .base import *
 
 TEMPLATES = [
     {
