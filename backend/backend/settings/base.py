@@ -18,6 +18,7 @@ ROOT_DIR = os.path.realpath(os.path.join(BASE_DIR, '..'))
 
 # Frontend and backend paths
 BACKEND_DIR = BASE_DIR
+FRONTEND_DIR = os.path.join(ROOT_DIR, 'frontend')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
