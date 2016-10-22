@@ -19,6 +19,6 @@ TEMPLATES = [
 ]
 
 STATICFILES_DIRS = [
-    os.path.join(FRONTEND_DIR, '.tmp'),
-    os.path.join(FRONTEND_DIR, 'static'),
+    os.path.join(FRONTEND_DIR, '.tmp', 'static'),
+    os.path.join(FRONTEND_DIR, 'static')
 ]
