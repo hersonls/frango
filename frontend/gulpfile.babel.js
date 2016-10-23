@@ -70,7 +70,7 @@ gulp.task('images', () => {
 });
 
 gulp.task('html', ['styles', 'scripts'], () => {
-  return gulp.src('templates/*.html')
+  return gulp.src('templates/**/*.html')
     .pipe($.useref({searchPath: ['.tmp', '.tmp/static', 'static', 'templates', '.']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano()))
@@ -111,7 +111,7 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
   });
 
   gulp.watch([
-    'templates/*.html',
+    'templates/**/*.html',
     '.tmp/static/scripts/**/*.js',
     'templates/images/**/*',
     '.tmp/static/fonts/**/*'
