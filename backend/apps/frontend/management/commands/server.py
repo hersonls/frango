@@ -15,9 +15,7 @@ class Command(StaticfilesRunserverCommand):
         return super(Command, self).inner_run(*args, **options)
 
     def start_grunt(self):
-        print "*" * 80
         self.stdout.write('>>> Starting gulp server:django task...')
-        print "*" * 80
 
         self.grunt_process = subprocess.Popen(
             ['gulp serve:django --cwd {0}'
