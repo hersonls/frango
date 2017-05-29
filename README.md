@@ -5,6 +5,11 @@ Now frontend and backend will not live togheter anymore. Frango use by
 default Gulp to automate your frontend tasks, creating a familiar enviroment 
 for frontend developers who works with Django as backend framework.
 
+Test in heroku
+--------------
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 System dependences
 ------------------
 
