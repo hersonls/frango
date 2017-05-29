@@ -1,0 +1,12 @@
+{
+  "name": "Frango",
+  "description": "Frango - A FRontend and backend djANGO project template",
+  "repository": "https://github.com/hersonls/frango",
+  "logo": "https://",
+  "keywords": ["python", "django", "frontend", "node", "javascript", "babel"],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
