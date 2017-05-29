@@ -8,5 +8,12 @@
     {
       "url": "heroku/python"
     }
-  ]
+  ],
+  "environments": {
+    "test": {
+      "env": {
+        "DISABLE_COLLECTSTATIC": 1 
+      }
+    }
+  }
 }
