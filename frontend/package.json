@@ -59,5 +59,8 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "htmlmin": "0.0.7"
   }
 }

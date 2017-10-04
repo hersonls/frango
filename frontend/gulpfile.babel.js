@@ -25,7 +25,7 @@ gulp.task('styles', () => {
 gulp.task('scripts', () => {
   return gulp.src('static/scripts/**/*.js')
     .pipe($.plumber())
-    .pipe($.sourcemaps.init()) 
+    .pipe($.sourcemaps.init())
     .pipe($.babel())
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/static/scripts'))
@@ -74,6 +74,10 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe($.useref({searchPath: ['.tmp', '.tmp/static', 'static', 'templates', '.']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano()))
+    .pipe($.if('*.html', $.htmlmin({
+      collapseWhitespace: true,
+      ignoreCustomFragments: [/\{\%[\s\S]*?\%\}/g, /\{\{[\s\S]*?\}\}/g]
+    })))
     .pipe($.if('*.js', gulp.dest('dist')))
     .pipe($.if('*.css', gulp.dest('dist')))
     .pipe($.if('*.html', gulp.dest('dist/templates')));
