@@ -35,6 +35,7 @@
     "gulp-cache": "^0.4.2",
     "gulp-cssnano": "^2.1.1",
     "gulp-eslint": "^2.0.0",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-load-plugins": "^1.2.0",
@@ -60,7 +61,5 @@
       ]
     }
   },
-  "dependencies": {
-    "htmlmin": "0.0.7"
-  }
+  "dependencies": {}
 }
