@@ -41,6 +41,7 @@
     "gulp-load-plugins": "^1.2.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
+    "gulp-replace": "^0.6.1",
     "gulp-sass": "^2.2.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.2",
