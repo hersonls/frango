@@ -7,8 +7,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="/static/favicon.ico">
-    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+    <link rel="shortcut icon" href="{% static favicon.ico %}">
+    <link rel="apple-touch-icon" href="{% static apple-touch-icon.png }">
 
     <!-- build:css(source) /static/styles/vendor.css -->
     <!-- bower:css -->
@@ -16,7 +16,7 @@
     <!-- endbuild -->
 
     <!-- build:css(.tmp) /static/styles/main.css -->
-    <link rel="stylesheet" href="/static/styles/main.css">
+    <link rel="stylesheet" href="{% static /styles/main.css %}">
     <!-- endbuild -->
 
     <!-- build:js /static/scripts/vendor/modernizr.js -->
@@ -42,9 +42,9 @@
 
     <!-- build:js /static/scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="/static/bower_components/modernizr/modernizr.js"></script>
-    <script src="/static/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/static/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+    <script src="{% static /bower_components/modernizr/modernizr.js %}"></script>
+    <script src="{% static /bower_components/jquery/dist/jquery.js %}"></script>
+    <script src="{% static /bower_components/bootstrap-sass/assets/javascripts/bootstrap.js %}"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -52,7 +52,7 @@
     <!-- endbuild -->
 
     <!-- build:js /static/scripts/main.js -->
-    <script src="/static/scripts/main.js"></script>
+    <script src="{% static scripts/main.js %}"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
