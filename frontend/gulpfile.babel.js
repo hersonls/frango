@@ -74,6 +74,7 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe($.useref({searchPath: ['.tmp', '.tmp/static', 'static', 'templates', '.']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano()))
+    .pipe($.if('*.html', replace(/"\/static\/(.*?)"/g, '"{% static "$1" %}"')))
     .pipe($.if('*.html', $.htmlmin({
       collapseWhitespace: true,
       ignoreCustomFragments: [/\{\%[\s\S]*?\%\}/g, /\{\{[\s\S]*?\}\}/g]
