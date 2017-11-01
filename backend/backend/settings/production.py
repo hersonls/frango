@@ -1,11 +1,5 @@
 from .base import *
 
-import dj_database_url
-
-# Heroku Database
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
